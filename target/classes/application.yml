@@ -1,0 +1,91 @@
+spring:
+  application:
+    name: risk-ops-dashboard
+
+  # Use H2 in-memory DB by default for easy local development.
+  # Switch profile to 'postgres' for production.
+  profiles:
+    active: h2
+
+  datasource:
+    url: jdbc:h2:mem:riskopsdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
+    defer-datasource-initialization: true   # ← ADD THIS LINE
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.H2Dialect
+
+  sql:
+    init:
+      mode: always
+
+server:
+  port: 8080
+
+# ============================================================
+# RISK ENGINE CONFIGURATION
+# These thresholds are configurable without code changes.
+# In a real system, these could be stored in a database
+# and updated by risk analysts at runtime.
+# ============================================================
+risk:
+  rules:
+    velocity:
+      max-transactions-per-hour: 100
+      weight: 40           # Contributes 40 points to risk score at max
+    amount-threshold:
+      max-single-transaction: 50000.00
+      max-daily-volume: 500000.00
+      weight: 35
+    frequency:
+      max-daily-transactions: 200
+      weight: 25
+  thresholds:
+    medium-risk-score: 40   # Score >= 40 => MEDIUM
+    high-risk-score: 70     # Score >= 70 => HIGH
+    auto-freeze-score: 90   # Score >= 90 => auto-FROZEN
+
+# ============================================================
+# ASYNC / THREAD POOL for bulk operations
+# ============================================================
+async:
+  bulk-operations:
+    core-pool-size: 4
+    max-pool-size: 8
+    queue-capacity: 500
+
+logging:
+  level:
+    com.fintech.riskops: INFO
+    org.springframework.security: WARN
+
+---
+# PostgreSQL profile - activate with: --spring.profiles.active=postgres
+spring:
+  config:
+    activate:
+      on-profile: postgres
+  datasource:
+    url: jdbc:postgresql://localhost:5432/riskopsdb
+    driver-class-name: org.postgresql.Driver
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:postgres}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
