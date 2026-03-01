@@ -5,6 +5,16 @@
 
 The project is Live at: https://risk-ops-dashboard.onrender.com/
 
+### Authentication
+All endpoints use HTTP Basic Auth.
+
+| User      | Password     | Role       |
+|-----------|-------------|------------|
+| admin     | admin123    |   signin  |
+| analyst   | analyst123  | ANALYST    |
+| riskops   | riskops123  | RISK_OPS   |
+| admin     | admin123    | ADMIN      |
+
 ---
 
 ## System Architecture
