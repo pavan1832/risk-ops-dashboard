@@ -350,7 +350,6 @@
   </div>
 </div>
 
-<!-- TOAST -->
 <!-- ADD MERCHANT MODAL -->
 <div class="modal-overlay hidden" id="modal-create">
   <div class="modal" style="width:520px;">
@@ -416,7 +415,6 @@
 
 <!-- TOAST -->
 <div class="toast hidden" id="toast"></div>
-
 
 <script>
 // ============================================================
@@ -782,15 +780,10 @@ function showToast(msg, type = 'success') {
 }
 
 // ============================================================
-// CREATE MERCHANT (mock)
-// ============================================================
-// ============================================================
-// CREATE MERCHANT (mock)
-// ============================================================
-// ============================================================
 // CREATE MERCHANT
 // ============================================================
 function openCreateModal() {
+  // Clear previous values
   document.getElementById('create-name').value = '';
   document.getElementById('create-email').value = '';
   document.getElementById('create-business-type').value = 'E_COMMERCE';
@@ -808,6 +801,7 @@ async function submitCreateMerchant() {
   const name  = document.getElementById('create-name').value.trim();
   const email = document.getElementById('create-email').value.trim();
 
+  // Basic validation
   const errorEl = document.getElementById('create-error');
   if (!name || !email) {
     errorEl.textContent = 'Name and email are required.';
@@ -821,6 +815,7 @@ async function submitCreateMerchant() {
   }
   errorEl.style.display = 'none';
 
+  // Build features list from checkboxes
   const features = [];
   if (document.getElementById('feat-payments').checked)    features.push('PAYMENTS');
   if (document.getElementById('feat-withdrawals').checked) features.push('WITHDRAWALS');
@@ -834,6 +829,7 @@ async function submitCreateMerchant() {
     enabledFeatures: features
   };
 
+  // Disable button while submitting
   const btn = document.getElementById('create-submit-btn');
   btn.textContent = 'Creating...';
   btn.disabled = true;
@@ -842,19 +838,33 @@ async function submitCreateMerchant() {
     const result = await apiRequest('/merchants', 'POST', payload);
 
     if (result && result.id) {
-      MOCK_MERCHANTS.push({
-        id: result.id, name: result.name, email: result.email,
-        businessType: result.businessType, riskStatus: result.riskStatus,
-        riskScore: 0, enabledFeatures: features, reviewPending: false,
-        createdAt: new Date().toISOString()
-      });
+      // Real API success
       closeModals();
       showToast('Merchant "' + result.name + '" created successfully!', 'success');
-    } else {
+      // Add to mock list too so table updates immediately
       MOCK_MERCHANTS.push({
-        id: 'mock-' + Date.now(), name: payload.name, email: payload.email,
-        businessType: payload.businessType, riskStatus: payload.riskStatus,
-        riskScore: 0, enabledFeatures: features, reviewPending: false,
+        id: result.id,
+        name: result.name,
+        email: result.email,
+        businessType: result.businessType,
+        riskStatus: result.riskStatus,
+        riskScore: 0,
+        enabledFeatures: features,
+        reviewPending: false,
+        createdAt: new Date().toISOString()
+      });
+    } else {
+      // Mock mode - no backend needed
+      const mockId = 'mock-' + Date.now();
+      MOCK_MERCHANTS.push({
+        id: mockId,
+        name: payload.name,
+        email: payload.email,
+        businessType: payload.businessType,
+        riskStatus: payload.riskStatus,
+        riskScore: 0,
+        enabledFeatures: features,
+        reviewPending: false,
         createdAt: new Date().toISOString()
       });
       closeModals();
@@ -865,7 +875,7 @@ async function submitCreateMerchant() {
     loadMetrics();
 
   } catch (e) {
-    errorEl.textContent = 'Failed to create merchant.';
+    errorEl.textContent = 'Failed to create merchant. Check the console for details.';
     errorEl.style.display = 'block';
     btn.textContent = 'Create Merchant';
     btn.disabled = false;
