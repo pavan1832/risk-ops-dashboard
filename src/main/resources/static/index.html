@@ -8,7 +8,6 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Inter', -apple-system, sans-serif; background: #0f1117; color: #e2e8f0; min-height: 100vh; }
 
-    /* ---- Layout ---- */
     .sidebar { width: 240px; background: #161b27; border-right: 1px solid #1e2535; position: fixed; height: 100vh; padding: 24px 0; display: flex; flex-direction: column; }
     .sidebar-logo { padding: 0 20px 24px; border-bottom: 1px solid #1e2535; }
     .sidebar-logo h2 { font-size: 14px; font-weight: 700; color: #7c3aed; letter-spacing: 0.08em; text-transform: uppercase; }
@@ -17,10 +16,8 @@
     .nav-item { display: flex; align-items: center; gap: 10px; padding: 10px 20px; cursor: pointer; color: #64748b; font-size: 14px; transition: all 0.15s; border-left: 3px solid transparent; }
     .nav-item:hover, .nav-item.active { color: #e2e8f0; background: #1e2535; border-left-color: #7c3aed; }
     .nav-item svg { width: 16px; height: 16px; }
-
     .main { margin-left: 240px; padding: 28px 32px; }
 
-    /* ---- Header ---- */
     .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 28px; }
     .header h1 { font-size: 20px; font-weight: 600; }
     .header-right { display: flex; align-items: center; gap: 12px; }
@@ -33,7 +30,6 @@
     .btn-secondary { background: #1e2535; color: #94a3b8; border: 1px solid #2d3748; }
     .btn-secondary:hover { background: #2d3748; }
 
-    /* ---- Metrics Grid ---- */
     .metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 28px; }
     .metric-card { background: #161b27; border: 1px solid #1e2535; border-radius: 10px; padding: 20px; }
     .metric-card .label { font-size: 12px; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
@@ -44,14 +40,12 @@
     .metric-card.high .value { color: #f87171; }
     .metric-card.pending .value { color: #a78bfa; }
 
-    /* ---- Table ---- */
     .section { background: #161b27; border: 1px solid #1e2535; border-radius: 10px; overflow: hidden; }
     .section-header { padding: 16px 20px; border-bottom: 1px solid #1e2535; display: flex; justify-content: space-between; align-items: center; }
     .section-header h3 { font-size: 14px; font-weight: 600; }
     .filters { display: flex; gap: 10px; align-items: center; }
     .filter-input { background: #0f1117; border: 1px solid #2d3748; color: #e2e8f0; padding: 7px 12px; border-radius: 6px; font-size: 13px; outline: none; }
     .filter-input:focus { border-color: #7c3aed; }
-
     table { width: 100%; border-collapse: collapse; }
     th { padding: 11px 16px; text-align: left; font-size: 11px; font-weight: 600; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid #1e2535; }
     td { padding: 13px 16px; font-size: 13px; border-bottom: 1px solid #111827; }
@@ -60,14 +54,12 @@
     .checkbox-col { width: 40px; }
     input[type="checkbox"] { width: 15px; height: 15px; accent-color: #7c3aed; cursor: pointer; }
 
-    /* ---- Status Badges ---- */
     .badge { padding: 3px 9px; border-radius: 4px; font-size: 11px; font-weight: 600; letter-spacing: 0.03em; }
     .badge-LOW { background: #064e3b; color: #34d399; }
     .badge-MEDIUM { background: #451a03; color: #fb923c; }
     .badge-HIGH { background: #450a0a; color: #f87171; }
     .badge-FROZEN { background: #172554; color: #93c5fd; }
 
-    /* ---- Risk Score Bar ---- */
     .score-bar { display: flex; align-items: center; gap: 8px; }
     .score-track { flex: 1; height: 5px; background: #1e2535; border-radius: 10px; overflow: hidden; }
     .score-fill { height: 100%; border-radius: 10px; transition: width 0.3s; }
@@ -77,17 +69,13 @@
     .score-frozen { background: #93c5fd; }
     .score-num { font-size: 12px; color: #94a3b8; width: 25px; text-align: right; }
 
-    /* ---- Feature Pills ---- */
     .features { display: flex; gap: 4px; flex-wrap: wrap; }
     .feature-pill { padding: 2px 7px; border-radius: 3px; font-size: 10px; background: #1e2535; color: #94a3b8; border: 1px solid #2d3748; }
     .feature-pill.on { background: #0f2e1b; color: #4ade80; border-color: #14532d; }
 
-    /* ---- Bulk action bar ---- */
     .bulk-bar { position: sticky; bottom: 0; background: #1e2535; border: 1px solid #3730a3; border-radius: 8px; padding: 12px 20px; display: flex; align-items: center; gap: 12px; margin-top: 16px; transition: all 0.2s; }
     .bulk-bar.hidden { opacity: 0; pointer-events: none; }
-    .bulk-bar span { font-size: 13px; color: #94a3b8; flex: 1; }
 
-    /* ---- Modal ---- */
     .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.7); display: flex; align-items: center; justify-content: center; z-index: 100; }
     .modal-overlay.hidden { display: none; }
     .modal { background: #161b27; border: 1px solid #2d3748; border-radius: 12px; padding: 28px; width: 480px; }
@@ -95,13 +83,11 @@
     .modal p { font-size: 13px; color: #94a3b8; margin-bottom: 20px; }
     .modal-actions { display: flex; gap: 10px; justify-content: flex-end; }
 
-    /* ---- Toast ---- */
     .toast { position: fixed; bottom: 20px; right: 20px; background: #1e2535; border: 1px solid #2d3748; border-radius: 8px; padding: 14px 18px; font-size: 13px; z-index: 200; transition: all 0.3s; max-width: 350px; }
     .toast.hidden { opacity: 0; transform: translateY(10px); pointer-events: none; }
     .toast.success { border-left: 3px solid #34d399; }
     .toast.error { border-left: 3px solid #f87171; }
 
-    /* ---- Audit Log ---- */
     .audit-timeline { padding: 16px 20px; }
     .audit-entry { display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid #1e2535; }
     .audit-entry:last-child { border-bottom: none; }
@@ -117,19 +103,76 @@
     .change-old { color: #f87171; }
     .change-new { color: #34d399; }
 
-    .tab-bar { display: flex; border-bottom: 1px solid #1e2535; padding: 0 20px; }
-    .tab { padding: 12px 16px; font-size: 13px; cursor: pointer; color: #64748b; border-bottom: 2px solid transparent; }
-    .tab.active { color: #7c3aed; border-bottom-color: #7c3aed; }
-
     .page { display: none; }
     .page.active { display: block; }
 
-    @media (max-width: 1024px) {
-      .metrics-grid { grid-template-columns: repeat(2, 1fr); }
-    }
+    .login-card { background: #0f1117; border: 1px solid #2d3748; border-radius: 10px; padding: 16px; cursor: pointer; transition: all 0.15s; margin-bottom: 12px; }
+    .login-card:hover { border-color: #7c3aed; background: #161b27; }
+    .login-card:last-child { margin-bottom: 0; }
+
+    @media (max-width: 1024px) { .metrics-grid { grid-template-columns: repeat(2, 1fr); } }
   </style>
 </head>
 <body>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- LOGIN SCREEN                                           -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div id="login-screen" style="display:none;position:fixed;inset:0;background:#0f1117;align-items:center;justify-content:center;z-index:999;">
+  <div style="background:#161b27;border:1px solid #2d3748;border-radius:16px;padding:40px;width:420px;">
+    <div style="text-align:center;margin-bottom:32px;">
+      <div style="font-size:40px;margin-bottom:12px;">⚡</div>
+      <h2 style="font-size:22px;font-weight:700;color:#7c3aed;letter-spacing:0.05em;">RISKOPS</h2>
+      <p style="font-size:13px;color:#64748b;margin-top:6px;">Select your role to continue</p>
+    </div>
+
+    <div class="login-card" onclick="promptLogin('analyst','ANALYST')">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px;">
+        <span style="font-size:18px;">👁</span>
+        <span style="font-weight:600;color:#e2e8f0;font-size:15px;">Analyst</span>
+        <span style="margin-left:auto;background:#064e3b;color:#34d399;font-size:10px;padding:2px 8px;border-radius:20px;">READ ONLY</span>
+      </div>
+      <div style="font-size:12px;color:#64748b;padding-left:28px;">View merchants, audit logs, run risk evaluations</div>
+    </div>
+
+    <div class="login-card" onclick="promptLogin('riskops','RISK_OPS')">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px;">
+        <span style="font-size:18px;">⚡</span>
+        <span style="font-weight:600;color:#e2e8f0;font-size:15px;">Risk Ops</span>
+        <span style="margin-left:auto;background:#451a03;color:#fb923c;font-size:10px;padding:2px 8px;border-radius:20px;">OPERATIONS</span>
+      </div>
+      <div style="font-size:12px;color:#64748b;padding-left:28px;">Bulk freeze/unfreeze, feature toggles, create merchants</div>
+    </div>
+
+    <div class="login-card" onclick="promptLogin('admin','ADMIN')">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px;">
+        <span style="font-size:18px;">🔑</span>
+        <span style="font-weight:600;color:#e2e8f0;font-size:15px;">Admin</span>
+        <span style="margin-left:auto;background:#450a0a;color:#f87171;font-size:10px;padding:2px 8px;border-radius:20px;">FULL ACCESS</span>
+      </div>
+      <div style="font-size:12px;color:#64748b;padding-left:28px;">All operations plus delete merchants and CSV export</div>
+    </div>
+  </div>
+</div>
+
+<!-- PASSWORD MODAL -->
+<div id="modal-password" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);align-items:center;justify-content:center;z-index:1000;">
+  <div style="background:#161b27;border:1px solid #2d3748;border-radius:12px;padding:28px;width:360px;">
+    <h3 style="font-size:16px;font-weight:600;margin-bottom:6px;" id="password-modal-title">Enter Password</h3>
+    <p style="font-size:13px;color:#64748b;margin-bottom:16px;" id="password-modal-sub">Enter your password to continue</p>
+    <input class="filter-input" type="password" id="password-input" placeholder="Password" style="width:100%;margin-bottom:8px;" onkeydown="if(event.key==='Enter')confirmLogin()" />
+    <div id="password-error" style="display:none;color:#f87171;font-size:12px;margin-bottom:12px;padding:8px;background:#450a0a;border-radius:6px;">Incorrect password. Please try again.</div>
+    <div style="display:flex;gap:10px;justify-content:flex-end;margin-top:12px;">
+      <button class="btn btn-secondary" onclick="closePasswordModal()">Cancel</button>
+      <button class="btn btn-primary" onclick="confirmLogin()">Login</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- APP SCREEN                                             -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div id="app-screen" style="display:none;width:100%;">
 
 <!-- SIDEBAR -->
 <div class="sidebar">
@@ -153,15 +196,16 @@
   </nav>
   <div style="padding: 16px 20px; border-top: 1px solid #1e2535;">
     <div style="font-size: 11px; color: #64748b;">Logged in as</div>
-    <div style="font-size: 13px; font-weight: 500; color: #a78bfa;">riskops@fintech.io</div>
-    <div style="font-size: 11px; color: #64748b; margin-top: 2px;">Role: RISK_OPS</div>
+    <div style="font-size: 13px; font-weight: 500; color: #a78bfa;" id="sidebar-username">—</div>
+    <div style="font-size: 11px; color: #64748b; margin-top: 2px;" id="sidebar-role">—</div>
+    <button class="btn btn-secondary" onclick="logout()" style="margin-top:10px;width:100%;font-size:11px;padding:5px;">⬅ Switch Role</button>
   </div>
 </div>
 
 <!-- MAIN -->
 <div class="main">
 
-  <!-- ============== DASHBOARD PAGE ============== -->
+  <!-- DASHBOARD PAGE -->
   <div id="page-dashboard" class="page active">
     <div class="header">
       <div>
@@ -173,67 +217,34 @@
         <button class="btn btn-secondary" onclick="refreshMetrics()">↺ Refresh</button>
       </div>
     </div>
-
-    <!-- Metrics -->
-    <div class="metrics-grid" id="metrics-grid">
-      <div class="metric-card flagged">
-        <div class="label">Flagged Today</div>
-        <div class="value" id="m-flagged">—</div>
-        <div class="sub">merchants flagged for review</div>
-      </div>
-      <div class="metric-card frozen">
-        <div class="label">Frozen Accounts</div>
-        <div class="value" id="m-frozen">—</div>
-        <div class="sub">fully locked merchants</div>
-      </div>
-      <div class="metric-card high">
-        <div class="label">High Risk</div>
-        <div class="value" id="m-high">—</div>
-        <div class="sub">merchants at HIGH risk level</div>
-      </div>
-      <div class="metric-card pending">
-        <div class="label">Pending Reviews</div>
-        <div class="value" id="m-pending">—</div>
-        <div class="sub">awaiting analyst action</div>
-      </div>
+    <div class="metrics-grid">
+      <div class="metric-card flagged"><div class="label">Flagged Today</div><div class="value" id="m-flagged">—</div><div class="sub">merchants flagged for review</div></div>
+      <div class="metric-card frozen"><div class="label">Frozen Accounts</div><div class="value" id="m-frozen">—</div><div class="sub">fully locked merchants</div></div>
+      <div class="metric-card high"><div class="label">High Risk</div><div class="value" id="m-high">—</div><div class="sub">merchants at HIGH risk level</div></div>
+      <div class="metric-card pending"><div class="label">Pending Reviews</div><div class="value" id="m-pending">—</div><div class="sub">awaiting analyst action</div></div>
     </div>
-
-    <!-- Risk distribution -->
     <div class="section">
       <div class="section-header">
         <h3>Risk Distribution</h3>
         <button class="btn btn-secondary" onclick="showPage('merchants', document.querySelector('.nav-item:nth-child(2)'))">View All Merchants →</button>
       </div>
       <div style="padding: 24px 20px;">
-        <div id="risk-distribution" style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;text-align:center;">
-          <div>
-            <div style="font-size:28px;font-weight:700;color:#34d399" id="dist-low">—</div>
-            <div style="font-size:12px;color:#64748b;margin-top:4px;">LOW RISK</div>
-          </div>
-          <div>
-            <div style="font-size:28px;font-weight:700;color:#fb923c" id="dist-medium">—</div>
-            <div style="font-size:12px;color:#64748b;margin-top:4px;">MEDIUM RISK</div>
-          </div>
-          <div>
-            <div style="font-size:28px;font-weight:700;color:#f87171" id="dist-high">—</div>
-            <div style="font-size:12px;color:#64748b;margin-top:4px;">HIGH RISK</div>
-          </div>
-          <div>
-            <div style="font-size:28px;font-weight:700;color:#93c5fd" id="dist-frozen">—</div>
-            <div style="font-size:12px;color:#64748b;margin-top:4px;">FROZEN</div>
-          </div>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;text-align:center;">
+          <div><div style="font-size:28px;font-weight:700;color:#34d399" id="dist-low">—</div><div style="font-size:12px;color:#64748b;margin-top:4px;">LOW RISK</div></div>
+          <div><div style="font-size:28px;font-weight:700;color:#fb923c" id="dist-medium">—</div><div style="font-size:12px;color:#64748b;margin-top:4px;">MEDIUM RISK</div></div>
+          <div><div style="font-size:28px;font-weight:700;color:#f87171" id="dist-high">—</div><div style="font-size:12px;color:#64748b;margin-top:4px;">HIGH RISK</div></div>
+          <div><div style="font-size:28px;font-weight:700;color:#93c5fd" id="dist-frozen">—</div><div style="font-size:12px;color:#64748b;margin-top:4px;">FROZEN</div></div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- ============== MERCHANTS PAGE ============== -->
+  <!-- MERCHANTS PAGE -->
   <div id="page-merchants" class="page">
     <div class="header">
       <h1>Merchant Management</h1>
-      <button class="btn btn-primary" onclick="openCreateModal()">+ New Merchant</button>
+      <button class="btn btn-primary" id="btn-new-merchant" onclick="openCreateModal()" style="display:none;">+ New Merchant</button>
     </div>
-
     <div class="section">
       <div class="section-header">
         <h3>All Merchants</h3>
@@ -248,17 +259,11 @@
           </select>
         </div>
       </div>
-
       <table>
         <thead>
           <tr>
             <th class="checkbox-col"><input type="checkbox" id="select-all" onchange="toggleSelectAll(this)" /></th>
-            <th>Merchant</th>
-            <th>Status</th>
-            <th>Risk Score</th>
-            <th>Features</th>
-            <th>Review</th>
-            <th>Actions</th>
+            <th>Merchant</th><th>Status</th><th>Risk Score</th><th>Features</th><th>Review</th><th>Actions</th>
           </tr>
         </thead>
         <tbody id="merchants-tbody">
@@ -266,27 +271,24 @@
         </tbody>
       </table>
     </div>
-
-    <!-- Bulk action bar -->
     <div class="bulk-bar hidden" id="bulk-bar">
       <span id="bulk-count">0 merchants selected</span>
       <button class="btn btn-secondary" onclick="bulkEvaluateRisk()">⚡ Evaluate Risk</button>
-      <button class="btn btn-secondary" onclick="bulkFeatureAction('enable', 'WITHDRAWALS')">✓ Enable Withdrawals</button>
-      <button class="btn btn-secondary" onclick="bulkFeatureAction('disable', 'WITHDRAWALS')">✗ Disable Withdrawals</button>
-      <button class="btn btn-danger" onclick="openBulkFreezeModal()">🔒 Bulk Freeze</button>
-      <button class="btn btn-primary" onclick="openBulkUnfreezeModal()">🔓 Bulk Unfreeze</button>
+      <button class="btn btn-secondary" id="bulk-enable-btn" onclick="bulkFeatureAction('enable','WITHDRAWALS')">✓ Enable Withdrawals</button>
+      <button class="btn btn-secondary" id="bulk-disable-btn" onclick="bulkFeatureAction('disable','WITHDRAWALS')">✗ Disable Withdrawals</button>
+      <button class="btn btn-danger" id="bulk-freeze-btn" onclick="openBulkFreezeModal()">🔒 Bulk Freeze</button>
+      <button class="btn btn-primary" id="bulk-unfreeze-btn" onclick="openBulkUnfreezeModal()">🔓 Bulk Unfreeze</button>
     </div>
   </div>
 
-  <!-- ============== AUDIT LOG PAGE ============== -->
+  <!-- AUDIT LOG PAGE -->
   <div id="page-audit" class="page">
     <div class="header">
       <h1>Audit Trail</h1>
       <div class="header-right">
-        <button class="btn btn-secondary" onclick="exportAuditCsv()">⬇ Export CSV</button>
+        <button class="btn btn-secondary" id="btn-export-csv" onclick="exportAuditCsv()" style="display:none;">⬇ Export CSV</button>
       </div>
     </div>
-
     <div class="section">
       <div class="section-header">
         <h3>Compliance Audit Log</h3>
@@ -309,13 +311,14 @@
     </div>
   </div>
 
-</div>
+</div><!-- end .main -->
+</div><!-- end #app-screen -->
 
-<!-- MODALS -->
+<!-- FREEZE MODAL -->
 <div class="modal-overlay hidden" id="modal-freeze">
   <div class="modal">
     <h3>🔒 Confirm Bulk Freeze</h3>
-    <p id="modal-freeze-text">You are about to freeze <strong>0 merchants</strong>. This will disable all features and prevent any transactions. All actions will be recorded in the audit trail.</p>
+    <p id="modal-freeze-text">You are about to freeze merchants.</p>
     <div style="margin-bottom:16px;">
       <label style="font-size:12px;color:#94a3b8;display:block;margin-bottom:6px;">Reason (required for compliance)</label>
       <input class="filter-input" id="freeze-reason" placeholder="e.g. Suspected fraud pattern - case #1234" style="width:100%;" />
@@ -327,10 +330,11 @@
   </div>
 </div>
 
+<!-- UNFREEZE MODAL -->
 <div class="modal-overlay hidden" id="modal-unfreeze">
   <div class="modal">
     <h3>🔓 Confirm Bulk Unfreeze</h3>
-    <p id="modal-unfreeze-text">Merchants will be restored to MEDIUM risk status with payments re-enabled.</p>
+    <p id="modal-unfreeze-text">Merchants will be restored.</p>
     <div style="margin-bottom:16px;">
       <label style="font-size:12px;color:#94a3b8;display:block;margin-bottom:6px;">Restore to status</label>
       <select class="filter-input" id="unfreeze-status" style="width:100%;">
@@ -350,6 +354,59 @@
   </div>
 </div>
 
+<!-- ADD MERCHANT MODAL -->
+<div class="modal-overlay hidden" id="modal-create">
+  <div class="modal" style="width:520px;">
+    <h3>➕ Add New Merchant</h3>
+    <p>Fill in the details below. Name and email are required.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;margin-top:16px;">
+      <div style="grid-column:1/-1;">
+        <label style="font-size:12px;color:#94a3b8;display:block;margin-bottom:6px;">Merchant Name *</label>
+        <input class="filter-input" id="create-name" placeholder="e.g. Acme Payments Ltd" style="width:100%;" />
+      </div>
+      <div style="grid-column:1/-1;">
+        <label style="font-size:12px;color:#94a3b8;display:block;margin-bottom:6px;">Email *</label>
+        <input class="filter-input" id="create-email" placeholder="e.g. ops@acme.io" style="width:100%;" />
+      </div>
+      <div>
+        <label style="font-size:12px;color:#94a3b8;display:block;margin-bottom:6px;">Business Type</label>
+        <select class="filter-input" id="create-business-type" style="width:100%;">
+          <option value="E_COMMERCE">E-Commerce</option>
+          <option value="SAAS">SaaS</option>
+          <option value="PAYMENTS">Payments</option>
+          <option value="MONEY_TRANSFER">Money Transfer</option>
+          <option value="REMITTANCE">Remittance</option>
+          <option value="TRADING">Trading</option>
+          <option value="LENDING">Lending</option>
+          <option value="RETAIL">Retail</option>
+          <option value="FINANCIAL_SERVICES">Financial Services</option>
+        </select>
+      </div>
+      <div>
+        <label style="font-size:12px;color:#94a3b8;display:block;margin-bottom:6px;">Initial Risk Status</label>
+        <select class="filter-input" id="create-risk-status" style="width:100%;">
+          <option value="LOW">LOW</option>
+          <option value="MEDIUM">MEDIUM</option>
+          <option value="HIGH">HIGH</option>
+        </select>
+      </div>
+    </div>
+    <div style="margin-bottom:16px;">
+      <label style="font-size:12px;color:#94a3b8;display:block;margin-bottom:8px;">Enabled Features</label>
+      <div style="display:flex;gap:16px;">
+        <label style="display:flex;align-items:center;gap:6px;font-size:13px;cursor:pointer;"><input type="checkbox" id="feat-payments" checked style="accent-color:#7c3aed;" /> Payments</label>
+        <label style="display:flex;align-items:center;gap:6px;font-size:13px;cursor:pointer;"><input type="checkbox" id="feat-withdrawals" checked style="accent-color:#7c3aed;" /> Withdrawals</label>
+        <label style="display:flex;align-items:center;gap:6px;font-size:13px;cursor:pointer;"><input type="checkbox" id="feat-api" checked style="accent-color:#7c3aed;" /> API Access</label>
+      </div>
+    </div>
+    <div id="create-error" style="display:none;color:#f87171;font-size:12px;margin-bottom:12px;padding:8px;background:#450a0a;border-radius:6px;"></div>
+    <div class="modal-actions">
+      <button class="btn btn-secondary" onclick="closeModals()">Cancel</button>
+      <button class="btn btn-primary" id="create-submit-btn" onclick="submitCreateMerchant()">Create Merchant</button>
+    </div>
+  </div>
+</div>
+
 <!-- TOAST -->
 <div class="toast hidden" id="toast"></div>
 
@@ -357,59 +414,171 @@
 // ============================================================
 // STATE
 // ============================================================
-const API_BASE = 'http://localhost:8080/api/v1';
-const CREDENTIALS = btoa('riskops:riskops123');
+const API_BASE = window.location.origin + '/api/v1';
 
-let allMerchants = [];
+const ROLE_PASSWORDS = {
+  analyst:  'analyst123',
+  riskops:  'riskops123',
+  admin:    'admin123'
+};
+
+let CREDENTIALS   = sessionStorage.getItem('riskops_creds') || null;
+let CURRENT_USER  = sessionStorage.getItem('riskops_user')  || null;
+let CURRENT_ROLE  = sessionStorage.getItem('riskops_role')  || null;
+
+let pendingLoginUser = null;
+let pendingLoginRole = null;
+
+let allMerchants      = [];
 let filteredMerchants = [];
-let selectedIds = new Set();
+let selectedIds       = new Set();
+let refreshInterval   = null;
 
 // ============================================================
 // INIT
 // ============================================================
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function() {
+  if (!CREDENTIALS) {
+    showLoginScreen();
+  } else {
+    showAppScreen();
+    initApp();
+  }
+});
+
+function initApp() {
   loadMetrics();
   loadMerchants();
   loadAuditLog();
-  // Auto-refresh metrics every 30 seconds
-  setInterval(loadMetrics, 30000);
-});
+  if (refreshInterval) clearInterval(refreshInterval);
+  refreshInterval = setInterval(loadMetrics, 30000);
+}
+
+// ============================================================
+// LOGIN / LOGOUT
+// ============================================================
+function showLoginScreen() {
+  document.getElementById('login-screen').style.display  = 'flex';
+  document.getElementById('app-screen').style.display    = 'none';
+  document.getElementById('modal-password').style.display = 'none';
+}
+
+function showAppScreen() {
+  document.getElementById('login-screen').style.display = 'none';
+  document.getElementById('app-screen').style.display   = 'block';
+
+  document.getElementById('sidebar-username').textContent = CURRENT_USER + '@fintech.io';
+  document.getElementById('sidebar-role').textContent     = 'Role: ' + CURRENT_ROLE;
+
+  // Role-based UI visibility
+  var isAnalyst  = CURRENT_ROLE === 'ANALYST';
+  var isAdmin    = CURRENT_ROLE === 'ADMIN';
+  var isOps      = CURRENT_ROLE === 'RISK_OPS' || isAdmin;
+
+  // New Merchant button — hidden for ANALYST
+  document.getElementById('btn-new-merchant').style.display = isAnalyst ? 'none' : 'inline-block';
+
+  // Bulk action buttons — hidden for ANALYST
+  document.getElementById('bulk-enable-btn').style.display   = isAnalyst ? 'none' : 'inline-block';
+  document.getElementById('bulk-disable-btn').style.display  = isAnalyst ? 'none' : 'inline-block';
+  document.getElementById('bulk-freeze-btn').style.display   = isAnalyst ? 'none' : 'inline-block';
+  document.getElementById('bulk-unfreeze-btn').style.display = isAnalyst ? 'none' : 'inline-block';
+
+  // CSV Export — ADMIN only
+  document.getElementById('btn-export-csv').style.display = isAdmin ? 'inline-block' : 'none';
+}
+
+function promptLogin(username, role) {
+  pendingLoginUser = username;
+  pendingLoginRole = role;
+  document.getElementById('password-modal-title').textContent = 'Login as ' + username;
+  document.getElementById('password-modal-sub').textContent   = 'Role: ' + role;
+  document.getElementById('password-input').value             = '';
+  document.getElementById('password-error').style.display     = 'none';
+  document.getElementById('modal-password').style.display     = 'flex';
+  setTimeout(function() { document.getElementById('password-input').focus(); }, 100);
+}
+
+function closePasswordModal() {
+  document.getElementById('modal-password').style.display = 'none';
+  pendingLoginUser = null;
+  pendingLoginRole = null;
+}
+
+function confirmLogin() {
+  var entered = document.getElementById('password-input').value;
+  if (entered === ROLE_PASSWORDS[pendingLoginUser]) {
+    document.getElementById('modal-password').style.display = 'none';
+    loginAs(pendingLoginUser, entered, pendingLoginRole);
+  } else {
+    document.getElementById('password-error').style.display = 'block';
+    document.getElementById('password-input').value = '';
+    document.getElementById('password-input').focus();
+  }
+}
+
+function loginAs(username, password, role) {
+  CREDENTIALS  = btoa(username + ':' + password);
+  CURRENT_USER = username;
+  CURRENT_ROLE = role;
+  sessionStorage.setItem('riskops_creds', CREDENTIALS);
+  sessionStorage.setItem('riskops_user',  CURRENT_USER);
+  sessionStorage.setItem('riskops_role',  CURRENT_ROLE);
+  showAppScreen();
+  initApp();
+}
+
+function logout() {
+  sessionStorage.removeItem('riskops_creds');
+  sessionStorage.removeItem('riskops_user');
+  sessionStorage.removeItem('riskops_role');
+  CREDENTIALS  = null;
+  CURRENT_USER = null;
+  CURRENT_ROLE = null;
+  allMerchants      = [];
+  filteredMerchants = [];
+  selectedIds.clear();
+  showLoginScreen();
+}
 
 // ============================================================
 // NAVIGATION
 // ============================================================
 function showPage(page, el) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
-  document.getElementById(`page-${page}`).classList.add('active');
+  document.querySelectorAll('.page').forEach(function(p) { p.classList.remove('active'); });
+  document.querySelectorAll('.nav-item').forEach(function(n) { n.classList.remove('active'); });
+  document.getElementById('page-' + page).classList.add('active');
   if (el) el.classList.add('active');
 }
 
 // ============================================================
 // API HELPERS
 // ============================================================
-async function apiRequest(path, method = 'GET', body = null) {
-  const opts = {
-    method,
+async function apiRequest(path, method, body) {
+  method = method || 'GET';
+  var opts = {
+    method: method,
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': `Basic ${CREDENTIALS}`
+      'Authorization': 'Basic ' + CREDENTIALS
     }
   };
   if (body) opts.body = JSON.stringify(body);
-
   try {
-    const res = await fetch(`${API_BASE}${path}`, opts);
-    if (!res.ok) throw new Error(`HTTP ${res.status}: ${await res.text()}`);
+    var controller = new AbortController();
+    var timeout = setTimeout(function() { controller.abort(); }, 5000);
+    opts.signal = controller.signal;
+    var res = await fetch(API_BASE + path, opts);
+    clearTimeout(timeout);
+    if (!res.ok) throw new Error('HTTP ' + res.status);
     return res.status === 204 ? null : await res.json();
-  } catch (e) {
-    // In demo mode without backend, return mock data
+  } catch(e) {
     return getMockData(path, method);
   }
 }
 
 // ============================================================
-// MOCK DATA (works without backend running)
+// MOCK DATA
 // ============================================================
 function getMockData(path, method) {
   if (path.includes('/dashboard/metrics')) {
@@ -419,120 +588,97 @@ function getMockData(path, method) {
   if (path.includes('/merchants') && !path.includes('bulk') && !path.includes('risk')) {
     return { content: MOCK_MERCHANTS, totalElements: MOCK_MERCHANTS.length };
   }
-  if (path.includes('/audit')) {
-    return { content: MOCK_AUDIT_LOGS, totalElements: MOCK_AUDIT_LOGS.length };
-  }
+  if (path.includes('/audit')) { return MOCK_AUDIT_LOGS; }
   if (path.includes('/risk/evaluate')) {
-    const id = path.split('/').pop();
-    return { merchantId: id, riskScore: Math.floor(Math.random()*100), riskLevel: 'MEDIUM',
-             summary: 'Score: 52/100 | Level: MEDIUM', ruleBreakdown: [] };
+    return { merchantId: path.split('/').pop(), riskScore: Math.floor(Math.random()*100),
+             riskLevel: 'MEDIUM', summary: 'Mock evaluation', ruleBreakdown: [] };
   }
   if (method === 'POST' && path.includes('bulk')) {
     return { successCount: selectedIds.size, failedCount: 0, requestedCount: selectedIds.size,
-             correlationId: 'mock-' + Date.now(), message: 'Bulk operation completed (mock)' };
+             correlationId: 'mock-' + Date.now(), message: 'OK' };
   }
   return {};
 }
 
-const MOCK_MERCHANTS = [
-  { id: 'a1b2c3d4-0001-0001-0001-000000000001', name: 'GreenLeaf Payments', email: 'ops@greenleaf.io', businessType: 'E_COMMERCE', riskStatus: 'LOW', riskScore: 5, enabledFeatures: ['PAYMENTS','WITHDRAWALS','API_ACCESS'], reviewPending: false, createdAt: '2024-11-30T10:00:00' },
-  { id: 'a1b2c3d4-0002-0002-0002-000000000002', name: 'Sunrise Tech Ltd', email: 'billing@sunrisetech.com', businessType: 'SAAS', riskStatus: 'LOW', riskScore: 12, enabledFeatures: ['PAYMENTS','WITHDRAWALS','API_ACCESS'], reviewPending: false, createdAt: '2024-12-31T10:00:00' },
-  { id: 'a1b2c3d4-0003-0003-0003-000000000003', name: 'FastCash Express', email: 'risk@fastcash.io', businessType: 'MONEY_TRANSFER', riskStatus: 'MEDIUM', riskScore: 52, enabledFeatures: ['PAYMENTS','API_ACCESS'], reviewPending: true, createdAt: '2024-12-01T10:00:00' },
-  { id: 'a1b2c3d4-0004-0004-0004-000000000004', name: 'Meridian Trading Co', email: 'compliance@meridian.co', businessType: 'TRADING', riskStatus: 'MEDIUM', riskScore: 48, enabledFeatures: ['PAYMENTS','WITHDRAWALS','API_ACCESS'], reviewPending: false, createdAt: '2024-12-16T10:00:00' },
-  { id: 'a1b2c3d4-0005-0005-0005-000000000005', name: 'VelocityPay Corp', email: 'admin@velocitypay.io', businessType: 'PAYMENTS', riskStatus: 'HIGH', riskScore: 78, enabledFeatures: ['PAYMENTS'], reviewPending: true, createdAt: '2025-01-11T10:00:00' },
-  { id: 'a1b2c3d4-0006-0006-0006-000000000006', name: 'Global Remit Hub', email: 'ops@globalremit.net', businessType: 'REMITTANCE', riskStatus: 'HIGH', riskScore: 82, enabledFeatures: ['PAYMENTS'], reviewPending: true, createdAt: '2025-01-16T10:00:00' },
-  { id: 'a1b2c3d4-0007-0007-0007-000000000007', name: 'Shadow Commerce LLC', email: 'contact@shadowcommerce.io', businessType: 'E_COMMERCE', riskStatus: 'FROZEN', riskScore: 94, enabledFeatures: [], reviewPending: true, createdAt: '2025-01-21T10:00:00' },
-  { id: 'a1b2c3d4-0008-0008-0008-000000000008', name: 'QuickDraw Finance', email: 'admin@quickdraw.finance', businessType: 'LENDING', riskStatus: 'FROZEN', riskScore: 91, enabledFeatures: [], reviewPending: false, createdAt: '2024-11-01T10:00:00' },
-  { id: 'a1b2c3d4-0009-0009-0009-000000000009', name: 'ClearPath Merchants', email: 'payments@clearpath.io', businessType: 'RETAIL', riskStatus: 'LOW', riskScore: 18, enabledFeatures: ['PAYMENTS','WITHDRAWALS','API_ACCESS'], reviewPending: false, createdAt: '2024-12-16T10:00:00' },
-  { id: 'a1b2c3d4-0010-0010-0010-000000000010', name: 'Horizon Finserv', email: 'ops@horizon.fin', businessType: 'FINANCIAL_SERVICES', riskStatus: 'MEDIUM', riskScore: 61, enabledFeatures: ['PAYMENTS'], reviewPending: true, createdAt: '2024-12-11T10:00:00' }
+var MOCK_MERCHANTS = [
+  { id: 'a1b2c3d4-0001-0001-0001-000000000001', name: 'GreenLeaf Payments',  email: 'ops@greenleaf.io',         businessType: 'E_COMMERCE',         riskStatus: 'LOW',    riskScore: 5,  enabledFeatures: ['PAYMENTS','WITHDRAWALS','API_ACCESS'], reviewPending: false },
+  { id: 'a1b2c3d4-0002-0002-0002-000000000002', name: 'Sunrise Tech Ltd',    email: 'billing@sunrisetech.com',  businessType: 'SAAS',               riskStatus: 'LOW',    riskScore: 12, enabledFeatures: ['PAYMENTS','WITHDRAWALS','API_ACCESS'], reviewPending: false },
+  { id: 'a1b2c3d4-0003-0003-0003-000000000003', name: 'FastCash Express',    email: 'risk@fastcash.io',         businessType: 'MONEY_TRANSFER',     riskStatus: 'MEDIUM', riskScore: 52, enabledFeatures: ['PAYMENTS','API_ACCESS'],               reviewPending: true  },
+  { id: 'a1b2c3d4-0004-0004-0004-000000000004', name: 'Meridian Trading Co', email: 'compliance@meridian.co',   businessType: 'TRADING',            riskStatus: 'MEDIUM', riskScore: 48, enabledFeatures: ['PAYMENTS','WITHDRAWALS','API_ACCESS'], reviewPending: false },
+  { id: 'a1b2c3d4-0005-0005-0005-000000000005', name: 'VelocityPay Corp',    email: 'admin@velocitypay.io',     businessType: 'PAYMENTS',           riskStatus: 'HIGH',   riskScore: 78, enabledFeatures: ['PAYMENTS'],                           reviewPending: true  },
+  { id: 'a1b2c3d4-0006-0006-0006-000000000006', name: 'Global Remit Hub',    email: 'ops@globalremit.net',      businessType: 'REMITTANCE',         riskStatus: 'HIGH',   riskScore: 82, enabledFeatures: ['PAYMENTS'],                           reviewPending: true  },
+  { id: 'a1b2c3d4-0007-0007-0007-000000000007', name: 'Shadow Commerce LLC', email: 'contact@shadowcommerce.io',businessType: 'E_COMMERCE',         riskStatus: 'FROZEN', riskScore: 94, enabledFeatures: [],                                     reviewPending: true  },
+  { id: 'a1b2c3d4-0008-0008-0008-000000000008', name: 'QuickDraw Finance',   email: 'admin@quickdraw.finance',  businessType: 'LENDING',            riskStatus: 'FROZEN', riskScore: 91, enabledFeatures: [],                                     reviewPending: false },
+  { id: 'a1b2c3d4-0009-0009-0009-000000000009', name: 'ClearPath Merchants', email: 'payments@clearpath.io',    businessType: 'RETAIL',             riskStatus: 'LOW',    riskScore: 18, enabledFeatures: ['PAYMENTS','WITHDRAWALS','API_ACCESS'], reviewPending: false },
+  { id: 'a1b2c3d4-0010-0010-0010-000000000010', name: 'Horizon Finserv',     email: 'ops@horizon.fin',          businessType: 'FINANCIAL_SERVICES', riskStatus: 'MEDIUM', riskScore: 61, enabledFeatures: ['PAYMENTS'],                           reviewPending: true  }
 ];
 
-const MOCK_AUDIT_LOGS = {
-  content: [
-    { id: '1', actionType: 'RISK_AUTO_FROZEN', entityType: 'MERCHANT', entityId: 'a1b2c3d4-0007', oldValue: 'HIGH', newValue: 'FROZEN', performedBy: 'RISK_ENGINE', description: 'Auto-frozen: score 94/100 exceeded threshold', timestamp: '2025-02-25T14:32:00' },
-    { id: '2', actionType: 'RISK_STATUS_CHANGED', entityType: 'MERCHANT', entityId: 'a1b2c3d4-0005', oldValue: 'MEDIUM', newValue: 'HIGH', performedBy: 'riskops', description: 'Manual escalation after velocity spike', timestamp: '2025-02-27T09:15:00' },
-    { id: '3', actionType: 'FEATURE_DISABLED', entityType: 'MERCHANT', entityId: 'a1b2c3d4-0003', oldValue: 'WITHDRAWALS', newValue: null, performedBy: 'riskops', description: 'Withdrawal disabled pending AML investigation', timestamp: '2025-02-26T11:45:00' },
-    { id: '4', actionType: 'BULK_FREEZE', entityType: 'MERCHANT', entityId: 'a1b2c3d4-0008', oldValue: 'HIGH', newValue: 'FROZEN', performedBy: 'admin', correlationId: 'corr-abc-123', description: 'Manual freeze: suspected structuring pattern', timestamp: '2025-02-21T16:20:00' },
-    { id: '5', actionType: 'RISK_STATUS_CHANGED', entityType: 'MERCHANT', entityId: 'a1b2c3d4-0009', oldValue: 'HIGH', newValue: 'LOW', performedBy: 'riskops', description: 'Review complete. False positive - holiday season spike.', timestamp: '2025-02-28T08:30:00' },
-    { id: '6', actionType: 'MERCHANT_CREATED', entityType: 'MERCHANT', entityId: 'a1b2c3d4-0010', oldValue: null, newValue: 'Horizon Finserv', performedBy: 'riskops', description: 'Merchant created: Horizon Finserv', timestamp: '2024-12-11T10:00:00' },
-    { id: '7', actionType: 'RISK_EVALUATED', entityType: 'MERCHANT', entityId: 'a1b2c3d4-0006', oldValue: 'score:45', newValue: 'score:82', performedBy: 'RISK_ENGINE', description: 'Score: 82/100 | Level: HIGH | Rules: [AMOUNT_THRESHOLD_RULE(+35)]', timestamp: '2025-02-28T06:00:00' },
-  ]
-};
+var MOCK_AUDIT_LOGS = { content: [
+  { id:'1', actionType:'RISK_AUTO_FROZEN',    entityType:'MERCHANT', entityId:'a1b2c3d4-0007', oldValue:'HIGH',       newValue:'FROZEN',          performedBy:'RISK_ENGINE', description:'Auto-frozen: score 94/100 exceeded threshold',          timestamp:'2025-02-25T14:32:00' },
+  { id:'2', actionType:'RISK_STATUS_CHANGED', entityType:'MERCHANT', entityId:'a1b2c3d4-0005', oldValue:'MEDIUM',     newValue:'HIGH',            performedBy:'riskops',     description:'Manual escalation after velocity spike',                timestamp:'2025-02-27T09:15:00' },
+  { id:'3', actionType:'FEATURE_DISABLED',    entityType:'MERCHANT', entityId:'a1b2c3d4-0003', oldValue:'WITHDRAWALS',newValue:null,             performedBy:'riskops',     description:'Withdrawal disabled pending AML investigation',         timestamp:'2025-02-26T11:45:00' },
+  { id:'4', actionType:'BULK_FREEZE',         entityType:'MERCHANT', entityId:'a1b2c3d4-0008', oldValue:'HIGH',       newValue:'FROZEN',          performedBy:'admin',       correlationId:'corr-abc-123', description:'Manual freeze: suspected structuring', timestamp:'2025-02-21T16:20:00' },
+  { id:'5', actionType:'RISK_STATUS_CHANGED', entityType:'MERCHANT', entityId:'a1b2c3d4-0009', oldValue:'HIGH',       newValue:'LOW',             performedBy:'riskops',     description:'Review complete. False positive.',                      timestamp:'2025-02-28T08:30:00' },
+  { id:'6', actionType:'MERCHANT_CREATED',    entityType:'MERCHANT', entityId:'a1b2c3d4-0010', oldValue:null,         newValue:'Horizon Finserv', performedBy:'riskops',     description:'Merchant created: Horizon Finserv',                     timestamp:'2024-12-11T10:00:00' },
+  { id:'7', actionType:'RISK_EVALUATED',      entityType:'MERCHANT', entityId:'a1b2c3d4-0006', oldValue:'score:45',   newValue:'score:82',        performedBy:'RISK_ENGINE', description:'Score: 82/100 | Level: HIGH | AMOUNT_THRESHOLD triggered',timestamp:'2025-02-28T06:00:00' }
+]};
 
 // ============================================================
 // METRICS
 // ============================================================
 async function loadMetrics() {
-  const data = await apiRequest('/merchants/dashboard/metrics');
-  document.getElementById('m-flagged').textContent = data.flaggedToday ?? '—';
-  document.getElementById('m-frozen').textContent = data.frozenMerchants ?? '—';
-  document.getElementById('m-high').textContent = data.highRiskMerchants ?? '—';
-  document.getElementById('m-pending').textContent = data.pendingReviews ?? '—';
-  document.getElementById('dist-low').textContent = data.lowRiskMerchants ?? '—';
-  document.getElementById('dist-medium').textContent = data.mediumRiskMerchants ?? '—';
-  document.getElementById('dist-high').textContent = data.highRiskMerchants ?? '—';
-  document.getElementById('dist-frozen').textContent = data.frozenMerchants ?? '—';
-  document.getElementById('last-updated').textContent = `Last updated: ${new Date().toLocaleTimeString()}`;
+  var data = await apiRequest('/merchants/dashboard/metrics');
+  document.getElementById('m-flagged').textContent  = data.flaggedToday      != null ? data.flaggedToday      : '—';
+  document.getElementById('m-frozen').textContent   = data.frozenMerchants   != null ? data.frozenMerchants   : '—';
+  document.getElementById('m-high').textContent     = data.highRiskMerchants != null ? data.highRiskMerchants : '—';
+  document.getElementById('m-pending').textContent  = data.pendingReviews    != null ? data.pendingReviews    : '—';
+  document.getElementById('dist-low').textContent   = data.lowRiskMerchants  != null ? data.lowRiskMerchants  : '—';
+  document.getElementById('dist-medium').textContent= data.mediumRiskMerchants != null ? data.mediumRiskMerchants : '—';
+  document.getElementById('dist-high').textContent  = data.highRiskMerchants != null ? data.highRiskMerchants : '—';
+  document.getElementById('dist-frozen').textContent= data.frozenMerchants   != null ? data.frozenMerchants   : '—';
+  document.getElementById('last-updated').textContent = 'Last updated: ' + new Date().toLocaleTimeString();
 }
-
 function refreshMetrics() { loadMetrics(); showToast('Metrics refreshed', 'success'); }
 
 // ============================================================
 // MERCHANTS TABLE
 // ============================================================
 async function loadMerchants() {
-  const data = await apiRequest('/merchants?size=50');
+  var data = await apiRequest('/merchants?size=50');
   allMerchants = data.content || data || [];
-  filteredMerchants = [...allMerchants];
+  filteredMerchants = allMerchants.slice();
   renderMerchantsTable();
 }
 
 function filterMerchants() {
-  const name = document.getElementById('search-name').value.toLowerCase();
-  const status = document.getElementById('filter-status').value;
-  filteredMerchants = allMerchants.filter(m =>
-    (!name || m.name.toLowerCase().includes(name)) &&
-    (!status || m.riskStatus === status)
-  );
+  var name   = document.getElementById('search-name').value.toLowerCase();
+  var status = document.getElementById('filter-status').value;
+  filteredMerchants = allMerchants.filter(function(m) {
+    return (!name || m.name.toLowerCase().includes(name)) && (!status || m.riskStatus === status);
+  });
   renderMerchantsTable();
 }
 
 function renderMerchantsTable() {
-  const tbody = document.getElementById('merchants-tbody');
+  var tbody = document.getElementById('merchants-tbody');
   if (!filteredMerchants.length) {
     tbody.innerHTML = '<tr><td colspan="7" style="text-align:center;color:#64748b;padding:40px;">No merchants found</td></tr>';
     return;
   }
-
-  tbody.innerHTML = filteredMerchants.map(m => {
-    const scoreClass = m.riskScore >= 70 ? 'score-high' : m.riskScore >= 40 ? 'score-medium' :
-      m.riskStatus === 'FROZEN' ? 'score-frozen' : 'score-low';
-    const allFeatures = ['PAYMENTS', 'WITHDRAWALS', 'API_ACCESS'];
-    const features = allFeatures.map(f =>
-      `<span class="feature-pill ${m.enabledFeatures?.includes(f) ? 'on' : ''}">${f.slice(0,3)}</span>`
-    ).join('');
-
-    return `
-      <tr>
-        <td><input type="checkbox" onchange="toggleSelect('${m.id}', this)" ${selectedIds.has(m.id) ? 'checked' : ''} /></td>
-        <td>
-          <div style="font-weight:500">${m.name}</div>
-          <div style="font-size:11px;color:#64748b">${m.email}</div>
-        </td>
-        <td><span class="badge badge-${m.riskStatus}">${m.riskStatus}</span></td>
-        <td>
-          <div class="score-bar">
-            <div class="score-track"><div class="score-fill ${scoreClass}" style="width:${m.riskScore}%"></div></div>
-            <span class="score-num">${m.riskScore}</span>
-          </div>
-        </td>
-        <td><div class="features">${features}</div></td>
-        <td>${m.reviewPending ? '<span style="color:#fb923c;font-size:12px">⚠ Pending</span>' : '<span style="color:#64748b;font-size:12px">—</span>'}</td>
-        <td>
-          <button class="btn btn-secondary" style="font-size:11px;padding:5px 10px;" onclick="evaluateRisk('${m.id}')">⚡ Evaluate</button>
-        </td>
-      </tr>
-    `;
+  tbody.innerHTML = filteredMerchants.map(function(m) {
+    var scoreClass = m.riskScore >= 70 ? 'score-high' : m.riskScore >= 40 ? 'score-medium' : m.riskStatus === 'FROZEN' ? 'score-frozen' : 'score-low';
+    var features = ['PAYMENTS','WITHDRAWALS','API_ACCESS'].map(function(f) {
+      return '<span class="feature-pill ' + (m.enabledFeatures && m.enabledFeatures.includes(f) ? 'on' : '') + '">' + f.slice(0,3) + '</span>';
+    }).join('');
+    return '<tr>' +
+      '<td><input type="checkbox" onchange="toggleSelect(\'' + m.id + '\',this)" ' + (selectedIds.has(m.id) ? 'checked' : '') + '/></td>' +
+      '<td><div style="font-weight:500">' + m.name + '</div><div style="font-size:11px;color:#64748b">' + m.email + '</div></td>' +
+      '<td><span class="badge badge-' + m.riskStatus + '">' + m.riskStatus + '</span></td>' +
+      '<td><div class="score-bar"><div class="score-track"><div class="score-fill ' + scoreClass + '" style="width:' + m.riskScore + '%"></div></div><span class="score-num">' + m.riskScore + '</span></div></td>' +
+      '<td><div class="features">' + features + '</div></td>' +
+      '<td>' + (m.reviewPending ? '<span style="color:#fb923c;font-size:12px">⚠ Pending</span>' : '<span style="color:#64748b;font-size:12px">—</span>') + '</td>' +
+      '<td><button class="btn btn-secondary" style="font-size:11px;padding:5px 10px;" onclick="evaluateRisk(\'' + m.id + '\')">⚡ Evaluate</button></td>' +
+      '</tr>';
   }).join('');
 }
 
@@ -540,113 +686,79 @@ function renderMerchantsTable() {
 // SELECTION
 // ============================================================
 function toggleSelect(id, cb) {
-  if (cb.checked) selectedIds.add(id);
-  else selectedIds.delete(id);
+  if (cb.checked) selectedIds.add(id); else selectedIds.delete(id);
   updateBulkBar();
 }
-
 function toggleSelectAll(cb) {
-  filteredMerchants.forEach(m => {
-    if (cb.checked) selectedIds.add(m.id);
-    else selectedIds.delete(m.id);
-  });
-  document.querySelectorAll('tbody input[type="checkbox"]').forEach(c => c.checked = cb.checked);
+  filteredMerchants.forEach(function(m) { if (cb.checked) selectedIds.add(m.id); else selectedIds.delete(m.id); });
+  document.querySelectorAll('tbody input[type="checkbox"]').forEach(function(c) { c.checked = cb.checked; });
   updateBulkBar();
 }
-
 function updateBulkBar() {
-  const bar = document.getElementById('bulk-bar');
-  const count = selectedIds.size;
-  bar.classList.toggle('hidden', count === 0);
-  document.getElementById('bulk-count').textContent = `${count} merchant${count !== 1 ? 's' : ''} selected`;
+  var count = selectedIds.size;
+  document.getElementById('bulk-bar').classList.toggle('hidden', count === 0);
+  document.getElementById('bulk-count').textContent = count + ' merchant' + (count !== 1 ? 's' : '') + ' selected';
 }
 
 // ============================================================
 // RISK EVALUATION
 // ============================================================
 async function evaluateRisk(merchantId) {
-  const data = await apiRequest(`/risk/evaluate/${merchantId}`, 'POST');
-  showToast(`Risk evaluated: Score ${data.riskScore}/100 → ${data.riskLevel}${data.autoFrozen ? ' ⚠ AUTO-FROZEN' : ''}`,
-    data.autoFrozen ? 'error' : 'success');
-  loadMerchants();
-  loadMetrics();
+  var data = await apiRequest('/risk/evaluate/' + merchantId, 'POST');
+  showToast('Score ' + data.riskScore + '/100 → ' + data.riskLevel + (data.autoFrozen ? ' ⚠ AUTO-FROZEN' : ''), data.autoFrozen ? 'error' : 'success');
+  loadMerchants(); loadMetrics();
 }
-
 async function bulkEvaluateRisk() {
-  let done = 0;
-  for (const id of selectedIds) { await evaluateRisk(id); done++; }
-  showToast(`Risk evaluated for ${done} merchants`, 'success');
+  var done = 0;
+  for (var id of selectedIds) { await evaluateRisk(id); done++; }
+  showToast('Risk evaluated for ' + done + ' merchants', 'success');
 }
 
 // ============================================================
 // BULK OPERATIONS
 // ============================================================
 function openBulkFreezeModal() {
-  document.getElementById('modal-freeze-text').innerHTML =
-    `You are about to freeze <strong>${selectedIds.size} merchants</strong>. This will disable all features. All actions are recorded in the audit trail.`;
+  if (CURRENT_ROLE === 'ANALYST') { showToast('Analysts cannot perform bulk freeze', 'error'); return; }
+  document.getElementById('modal-freeze-text').innerHTML = 'You are about to freeze <strong>' + selectedIds.size + ' merchants</strong>. This will disable all features.';
   document.getElementById('modal-freeze').classList.remove('hidden');
 }
-
 function openBulkUnfreezeModal() {
-  document.getElementById('modal-unfreeze-text').textContent =
-    `${selectedIds.size} merchants will be unfrozen.`;
+  if (CURRENT_ROLE === 'ANALYST') { showToast('Analysts cannot perform bulk unfreeze', 'error'); return; }
+  document.getElementById('modal-unfreeze-text').textContent = selectedIds.size + ' merchants will be unfrozen.';
   document.getElementById('modal-unfreeze').classList.remove('hidden');
 }
-
 function closeModals() {
-  document.querySelectorAll('.modal-overlay').forEach(m => m.classList.add('hidden'));
+  document.querySelectorAll('.modal-overlay').forEach(function(m) { m.classList.add('hidden'); });
 }
-
 async function executeBulkFreeze() {
-  const reason = document.getElementById('freeze-reason').value;
+  var reason = document.getElementById('freeze-reason').value;
   if (!reason) { showToast('Reason is required for compliance', 'error'); return; }
   closeModals();
-
-  const result = await apiRequest('/merchants/bulk/freeze', 'POST', {
-    merchantIds: [...selectedIds], reason
-  });
-
-  // Update mock state
-  MOCK_MERCHANTS.forEach(m => { if (selectedIds.has(m.id)) { m.riskStatus = 'FROZEN'; m.enabledFeatures = []; } });
-  showToast(`${result.successCount} merchants frozen. CorrelationID: ${result.correlationId?.slice(0,8)}...`, 'success');
-  selectedIds.clear();
-  updateBulkBar();
-  loadMerchants();
-  loadMetrics();
-  loadAuditLog();
+  var result = await apiRequest('/merchants/bulk/freeze', 'POST', { merchantIds: [...selectedIds], reason: reason });
+  MOCK_MERCHANTS.forEach(function(m) { if (selectedIds.has(m.id)) { m.riskStatus = 'FROZEN'; m.enabledFeatures = []; } });
+  showToast(result.successCount + ' merchants frozen. ID: ' + (result.correlationId||'').slice(0,8) + '...', 'success');
+  selectedIds.clear(); updateBulkBar(); loadMerchants(); loadMetrics(); loadAuditLog();
 }
-
 async function executeBulkUnfreeze() {
-  const status = document.getElementById('unfreeze-status').value;
-  const reason = document.getElementById('unfreeze-reason').value;
+  var status = document.getElementById('unfreeze-status').value;
+  var reason = document.getElementById('unfreeze-reason').value;
   closeModals();
-
-  const result = await apiRequest('/merchants/bulk/unfreeze', 'POST', {
-    merchantIds: [...selectedIds], targetStatus: status, reason
-  });
-
-  MOCK_MERCHANTS.forEach(m => { if (selectedIds.has(m.id) && m.riskStatus === 'FROZEN') m.riskStatus = status; });
-  showToast(`${result.successCount} merchants unfrozen → ${status}`, 'success');
-  selectedIds.clear();
-  updateBulkBar();
-  loadMerchants();
-  loadMetrics();
+  var result = await apiRequest('/merchants/bulk/unfreeze', 'POST', { merchantIds: [...selectedIds], targetStatus: status, reason: reason });
+  MOCK_MERCHANTS.forEach(function(m) { if (selectedIds.has(m.id) && m.riskStatus === 'FROZEN') m.riskStatus = status; });
+  showToast(result.successCount + ' merchants unfrozen → ' + status, 'success');
+  selectedIds.clear(); updateBulkBar(); loadMerchants(); loadMetrics();
 }
-
 async function bulkFeatureAction(action, feature) {
-  const endpoint = action === 'enable' ? '/merchants/bulk/feature/enable' : '/merchants/bulk/feature/disable';
-  const result = await apiRequest(endpoint, 'POST', {
-    merchantIds: [...selectedIds], feature
-  });
-
-  MOCK_MERCHANTS.forEach(m => {
+  if (CURRENT_ROLE === 'ANALYST') { showToast('Analysts cannot change features', 'error'); return; }
+  var endpoint = action === 'enable' ? '/merchants/bulk/feature/enable' : '/merchants/bulk/feature/disable';
+  var result = await apiRequest(endpoint, 'POST', { merchantIds: [...selectedIds], feature: feature });
+  MOCK_MERCHANTS.forEach(function(m) {
     if (selectedIds.has(m.id)) {
       if (action === 'enable' && !m.enabledFeatures.includes(feature)) m.enabledFeatures.push(feature);
-      if (action === 'disable') m.enabledFeatures = m.enabledFeatures.filter(f => f !== feature);
+      if (action === 'disable') m.enabledFeatures = m.enabledFeatures.filter(function(f) { return f !== feature; });
     }
   });
-
-  showToast(`${feature} ${action}d for ${result.successCount} merchants`, 'success');
+  showToast(feature + ' ' + action + 'd for ' + result.successCount + ' merchants', 'success');
   loadMerchants();
 }
 
@@ -654,75 +766,127 @@ async function bulkFeatureAction(action, feature) {
 // AUDIT LOG
 // ============================================================
 async function loadAuditLog() {
-  const filter = document.getElementById('audit-action-filter')?.value;
-  const path = filter ? `/audit?actionType=${filter}&size=50` : '/audit?size=50';
-  const data = await apiRequest(path);
-  const logs = data.content || [];
-  renderAuditLog(logs);
+  var filter = document.getElementById('audit-action-filter') ? document.getElementById('audit-action-filter').value : '';
+  var path = filter ? '/audit?actionType=' + filter + '&size=50' : '/audit?size=50';
+  var data = await apiRequest(path);
+  renderAuditLog(data.content || []);
 }
-
-const ACTION_COLORS = {
-  MERCHANT_CREATED: 'created', MERCHANT_UPDATED: 'created',
-  MERCHANT_FROZEN: 'frozen', BULK_FREEZE: 'frozen', RISK_AUTO_FROZEN: 'frozen',
-  MERCHANT_UNFROZEN: 'resolved', BULK_UNFREEZE: 'resolved',
-  RISK_STATUS_CHANGED: 'risk', RISK_EVALUATED: 'risk', RISK_AUTO_FLAGGED: 'risk',
-  FEATURE_ENABLED: 'feature', FEATURE_DISABLED: 'feature',
-  BULK_FEATURE_ENABLE: 'feature', BULK_FEATURE_DISABLE: 'feature'
+var ACTION_COLORS = {
+  MERCHANT_CREATED:'created', MERCHANT_UPDATED:'created',
+  MERCHANT_FROZEN:'frozen', BULK_FREEZE:'frozen', RISK_AUTO_FROZEN:'frozen',
+  MERCHANT_UNFROZEN:'resolved', BULK_UNFREEZE:'resolved',
+  RISK_STATUS_CHANGED:'risk', RISK_EVALUATED:'risk',
+  FEATURE_ENABLED:'feature', FEATURE_DISABLED:'feature'
 };
-
 function renderAuditLog(logs) {
-  const container = document.getElementById('audit-timeline');
-  if (!logs.length) {
-    container.innerHTML = '<div style="text-align:center;color:#64748b;padding:40px;">No audit records found</div>';
-    return;
-  }
-  container.innerHTML = logs.map(log => {
-    const dotClass = ACTION_COLORS[log.actionType] || 'created';
-    const time = new Date(log.timestamp).toLocaleString();
-    const changeHtml = (log.oldValue || log.newValue) ? `
-      <div class="change">
-        ${log.oldValue ? `<span class="change-old">− ${log.oldValue}</span>` : ''}
-        ${log.oldValue && log.newValue ? ' → ' : ''}
-        ${log.newValue ? `<span class="change-new">+ ${log.newValue}</span>` : ''}
-      </div>` : '';
-
-    return `
-      <div class="audit-entry">
-        <div class="audit-dot ${dotClass}"></div>
-        <div class="audit-body" style="flex:1">
-          <div class="action">${log.actionType.replace(/_/g, ' ')} — <span style="color:#94a3b8;font-weight:400">${log.entityType} ${log.entityId.slice(0,8)}...</span></div>
-          <div class="meta">${time} · by <strong>${log.performedBy}</strong>${log.correlationId ? ` · Batch: ${log.correlationId.slice(0,8)}...` : ''}</div>
-          ${changeHtml}
-          ${log.description ? `<div style="font-size:11px;color:#64748b;margin-top:3px;">${log.description}</div>` : ''}
-        </div>
-      </div>
-    `;
+  var container = document.getElementById('audit-timeline');
+  if (!logs.length) { container.innerHTML = '<div style="text-align:center;color:#64748b;padding:40px;">No audit records found</div>'; return; }
+  container.innerHTML = logs.map(function(log) {
+    var dotClass = ACTION_COLORS[log.actionType] || 'created';
+    var time = new Date(log.timestamp).toLocaleString();
+    var changeHtml = (log.oldValue || log.newValue) ?
+      '<div class="change">' +
+      (log.oldValue ? '<span class="change-old">− ' + log.oldValue + '</span>' : '') +
+      (log.oldValue && log.newValue ? ' → ' : '') +
+      (log.newValue ? '<span class="change-new">+ ' + log.newValue + '</span>' : '') +
+      '</div>' : '';
+    return '<div class="audit-entry">' +
+      '<div class="audit-dot ' + dotClass + '"></div>' +
+      '<div class="audit-body" style="flex:1">' +
+      '<div class="action">' + log.actionType.replace(/_/g,' ') + ' — <span style="color:#94a3b8;font-weight:400">' + log.entityType + ' ' + log.entityId.slice(0,8) + '...</span></div>' +
+      '<div class="meta">' + time + ' · by <strong>' + log.performedBy + '</strong>' + (log.correlationId ? ' · Batch: ' + log.correlationId.slice(0,8) + '...' : '') + '</div>' +
+      changeHtml +
+      (log.description ? '<div style="font-size:11px;color:#64748b;margin-top:3px;">' + log.description + '</div>' : '') +
+      '</div></div>';
   }).join('');
 }
-
 function exportAuditCsv() {
-  showToast('CSV export: call GET /api/v1/audit/export/csv?from=...&to=... (Admin role required)', 'success');
+  if (CURRENT_ROLE !== 'ADMIN') { showToast('CSV export requires ADMIN role', 'error'); return; }
+  showToast('Requesting CSV export...', 'success');
+  window.open(API_BASE + '/audit/export/csv', '_blank');
 }
 
 // ============================================================
 // TOAST
 // ============================================================
-let toastTimer;
-function showToast(msg, type = 'success') {
-  const t = document.getElementById('toast');
+var toastTimer;
+function showToast(msg, type) {
+  type = type || 'success';
+  var t = document.getElementById('toast');
   t.textContent = msg;
-  t.className = `toast ${type}`;
+  t.className = 'toast ' + type;
   clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => t.classList.add('hidden'), 4000);
+  toastTimer = setTimeout(function() { t.classList.add('hidden'); }, 4000);
 }
 
 // ============================================================
-// CREATE MERCHANT (mock)
+// CREATE MERCHANT
 // ============================================================
 function openCreateModal() {
-  showToast('Use POST /api/v1/merchants with merchant JSON body (see README)', 'success');
+  if (CURRENT_ROLE === 'ANALYST') { showToast('Analysts cannot create merchants', 'error'); return; }
+  document.getElementById('create-name').value = '';
+  document.getElementById('create-email').value = '';
+  document.getElementById('create-business-type').value = 'E_COMMERCE';
+  document.getElementById('create-risk-status').value = 'LOW';
+  document.getElementById('feat-payments').checked = true;
+  document.getElementById('feat-withdrawals').checked = true;
+  document.getElementById('feat-api').checked = true;
+  document.getElementById('create-error').style.display = 'none';
+  document.getElementById('create-submit-btn').textContent = 'Create Merchant';
+  document.getElementById('create-submit-btn').disabled = false;
+  document.getElementById('modal-create').classList.remove('hidden');
+}
+
+async function submitCreateMerchant() {
+  var name  = document.getElementById('create-name').value.trim();
+  var email = document.getElementById('create-email').value.trim();
+  var errorEl = document.getElementById('create-error');
+
+  if (!name || !email) { errorEl.textContent = 'Name and email are required.'; errorEl.style.display = 'block'; return; }
+  if (!email.includes('@')) { errorEl.textContent = 'Please enter a valid email address.'; errorEl.style.display = 'block'; return; }
+  errorEl.style.display = 'none';
+
+  var features = [];
+  if (document.getElementById('feat-payments').checked)    features.push('PAYMENTS');
+  if (document.getElementById('feat-withdrawals').checked) features.push('WITHDRAWALS');
+  if (document.getElementById('feat-api').checked)         features.push('API_ACCESS');
+
+  var payload = {
+    name: name, email: email,
+    businessType:    document.getElementById('create-business-type').value,
+    riskStatus:      document.getElementById('create-risk-status').value,
+    enabledFeatures: features
+  };
+
+  var btn = document.getElementById('create-submit-btn');
+  btn.textContent = 'Creating...';
+  btn.disabled = true;
+
+  try {
+    var result = await apiRequest('/merchants', 'POST', payload);
+    var newMerchant = {
+      id:            (result && result.id)    ? result.id    : ('mock-' + Date.now()),
+      name:          (result && result.name)  ? result.name  : payload.name,
+      email:         (result && result.email) ? result.email : payload.email,
+      businessType:  payload.businessType,
+      riskStatus:    payload.riskStatus,
+      riskScore:     0,
+      enabledFeatures: features,
+      reviewPending: false,
+      createdAt:     new Date().toISOString()
+    };
+    MOCK_MERCHANTS.push(newMerchant);
+    closeModals();
+    showToast('Merchant "' + newMerchant.name + '" created successfully!', 'success');
+    loadMerchants();
+    loadMetrics();
+  } catch(e) {
+    errorEl.textContent = 'Failed to create merchant.';
+    errorEl.style.display = 'block';
+    btn.textContent = 'Create Merchant';
+    btn.disabled = false;
+  }
 }
 </script>
-
 </body>
 </html>
