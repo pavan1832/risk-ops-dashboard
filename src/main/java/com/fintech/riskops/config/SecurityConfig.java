@@ -36,8 +36,9 @@ public class SecurityConfig {
         http
             .csrf(AbstractHttpConfigurer::disable)  // Disabled for REST API; use CSRF tokens in browser-facing apps
             .authorizeHttpRequests(auth -> auth
-                // Public: H2 console (dev only), actuator health
-                .requestMatchers("/h2-console/**", "/actuator/health").permitAll()
+                        // Public: static frontend, H2 console (dev only), actuator health
+                        .requestMatchers("/", "/index.html").permitAll()
+                        .requestMatchers("/h2-console/**", "/actuator/health").permitAll()
                 // Dashboard is accessible to all authenticated users
                 .requestMatchers(HttpMethod.GET, "/api/v1/merchants/dashboard/**").authenticated()
                 // Everything else requires authentication (fine-grained control via @PreAuthorize)
